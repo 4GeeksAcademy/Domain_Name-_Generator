@@ -23,10 +23,12 @@ function domainNameGenerator() {
     for (let adj of adjs) {
       for (let noun of nouns) {
         for (let extention of extentions) {
-          domainNames.push(pronoun + adj + noun + extention + ";");
+          domainNames.push(`${pronoun}${adj}${noun}${extention} ;`);
         }
       }
     }
   }
-  return `<ul>${domainNames.map(domainName => `<li>${domainName}</li>`)}</ul>`;
+  return `<ul>${domainNames
+    .map(domainName => `<li>${domainName}</li>`)
+    .join(" ")}</ul>`;
 }
